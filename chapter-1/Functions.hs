@@ -28,5 +28,9 @@ greeting = makeGreeting "Hello" "Person" -- Fully saturated
 paisaGreeting = makeGreeting "Que mas pues," -- Partially applied
 
 
+-- The function application has the highest precedence and
+-- is associate from left to right: f a b c => (f a) b c => (f' b) c => f'' c
+makeGreetingWithFirstPerson = flip makeGreeting "Person"
+
 main = print "no salutation to show yet"
 
